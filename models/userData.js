@@ -43,16 +43,12 @@ class UserData {
 
   }
 
-  static findOne(id) {
-
-    const o_id = new ObjectId(id)
-
+  static findOne(idNumber) {
     return(
       getDatabase()
         .collection('userData')
-        .findOne({ "_id": o_id })
+        .findOne({ "identityNumber": idNumber })
     )
-
   }
 
 }

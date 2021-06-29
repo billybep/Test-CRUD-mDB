@@ -62,8 +62,8 @@ class CtrlUserData {
   static async findOne(req, res, next) {
     try {
 
-      const id = req.params.id
-      const found = await UserData.findOne(id)
+      const idNumber = req.params.idNumber
+      const found = await UserData.findOne(idNumber)
       res.status(200).json(found)
 
     } catch (error) {

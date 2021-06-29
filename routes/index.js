@@ -5,7 +5,7 @@ const authenticate = require('../middlewares/auth')
 router.use(authenticate)
 router.get('/', CtrlUserData.findAll)
 router.post('/', CtrlUserData.addUser)
-router.get('/:id', CtrlUserData.findOne)
+router.get('/:idNumber', CtrlUserData.findOne)
 router.put('/:id', CtrlUserData.updateUser)
 router.delete('/:id', CtrlUserData.deleteUser)
 
