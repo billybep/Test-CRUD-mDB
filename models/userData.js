@@ -23,11 +23,11 @@ class UserData {
   static updateUser(payload, id) {
 
     const o_id = new ObjectId(id)
-
+    
     return(
       getDatabase()
         .collection('userData')
-        .updateOne({ id : o_id }, { $set: payload })
+        .updateOne({ "_id" : o_id }, { $set: payload })
     )
   }
 
