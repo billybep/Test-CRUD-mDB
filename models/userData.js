@@ -43,6 +43,18 @@ class UserData {
 
   }
 
+  static findOne(id) {
+
+    const o_id = new ObjectId(id)
+
+    return(
+      getDatabase()
+        .collection('userData')
+        .findOne({ "_id": o_id })
+    )
+
+  }
+
 }
 
 module.exports = UserData

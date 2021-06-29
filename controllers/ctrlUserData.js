@@ -59,6 +59,18 @@ class CtrlUserData {
     }
   }
 
+  static async findOne(req, res, next) {
+    try {
+
+      const id = req.params.id
+      const found = await UserData.findOne(id)
+      res.status(200).json(found)
+
+    } catch (error) {
+      next(error)
+    }
+  }
+
 }
 
 module.exports = CtrlUserData
